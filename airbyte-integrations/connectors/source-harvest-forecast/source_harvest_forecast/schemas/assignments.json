@@ -11,7 +11,8 @@
       ]
     },
     "end_date": {
-      "type": "string"
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "id": {
       "type": "integer"
@@ -44,10 +45,12 @@
       ]
     },
     "start_date": {
-      "type": "string"
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "updated_at": {
-      "type": "string"
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "updated_by_id": {
       "type": "integer"

@@ -18,10 +18,12 @@
       "type" : ["null", "string"]
     },
     "start_date" : {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "end_date" : {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "harvest_id" : {
       "type" : ["null", "integer"]

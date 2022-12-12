@@ -17,7 +17,8 @@
       "type": "string"
     },
     "updated_at": {
-      "type": "string"
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "updated_by_id": {
       "type": [
