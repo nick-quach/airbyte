@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "properties": {
+    "active_on_days_off": {
+      "type": "boolean"
+    },
+    "allocation": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "end_date": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "notes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "person_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "placeholder_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "repeated_assignment_set_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "start_date": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "updated_by_id": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

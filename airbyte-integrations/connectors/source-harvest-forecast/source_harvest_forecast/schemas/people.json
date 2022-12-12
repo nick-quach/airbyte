@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "admin": {
+      "type": "boolean"
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "color_blind": {
+      "type": "boolean"
+    },
+    "email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "harvest_user_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "id": {
+      "type": "integer"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "login": {
+      "type": "string"
+    },
+    "personal_feed_token_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "roles": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "subscribed": {
+      "type": "boolean"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "updated_by_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "weekly_capacity": {
+      "type": "integer"
+    },
+    "working_days": {
+      "properties": {
+        "friday": {
+          "type": "boolean"
+        },
+        "monday": {
+          "type": "boolean"
+        },
+        "thursday": {
+          "type": "boolean"
+        },
+        "tuesday": {
+          "type": "boolean"
+        },
+        "wednesday": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}
