@@ -58,5 +58,34 @@ class HarvestForecastStream(HttpStream, ABC):
 
 class Projects(HarvestForecastStream):
     """
-    Docs: https://help.getharvest.com/api-v2/clients-api/clients/contacts/
+    Path: "https://api.forecastapp.com/projects"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
+    """
+
+
+class Clients(HarvestForecastStream):
+    """
+    Path: "https://api.forecastapp.com/cients"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
+    """
+
+
+class Roles(HarvestForecastStream):
+    """
+    Path: "https://api.forecastapp.com/roles"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
+    """
+
+
+class Milestones(HarvestForecastStream):
+    """
+    Path: "https://api.forecastapp.com/milestones"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
+    """
+
+
+class People(HarvestForecastStream):
+    """
+    Path: "https://api.forecastapp.com/people"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
     """

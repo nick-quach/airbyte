@@ -10,7 +10,7 @@ from airbyte_cdk.logger import AirbyteLogger
 from airbyte_cdk.models import SyncMode
 from airbyte_cdk.sources import AbstractSource
 from airbyte_cdk.sources.streams import Stream
-from source_harvest_forecast.streams import Projects
+from source_harvest_forecast.streams import Clients, Milestones, People, Projects, Roles
 
 from .auth import HarvestOauth2Authenticator, HarvestTokenAuthenticator
 
@@ -53,6 +53,10 @@ class SourceHarvestForecast(AbstractSource):
 
         streams = [
             Projects(authenticator=auth),
+            Clients(authenticator=auth),
+            Roles(authenticator=auth),
+            Milestones(authenticator=auth),
+            People(authenticator=auth),
         ]
 
         return streams

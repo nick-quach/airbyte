@@ -1,13 +1,109 @@
 {
   "streams": [
     {
+      "cursor_field": null,
+      "destination_sync_mode": "append",
+      "primary_key": null,
       "stream": {
-        "name": "projects",
+        "default_cursor_field": null,
         "json_schema": {},
-        "supported_sync_modes": ["full_refresh"]
+        "name": "projects",
+        "namespace": null,
+        "source_defined_cursor": null,
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ],
+        "supported_sync_modes": [
+          "full_refresh"
+        ]
       },
-      "sync_mode": "full_refresh",
-      "destination_sync_mode": "overwrite"
+      "sync_mode": "full_refresh"
+    },
+    {
+      "cursor_field": null,
+      "destination_sync_mode": "append",
+      "primary_key": null,
+      "stream": {
+        "default_cursor_field": null,
+        "json_schema": {},
+        "name": "clients",
+        "namespace": null,
+        "source_defined_cursor": null,
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ],
+        "supported_sync_modes": [
+          "full_refresh"
+        ]
+      },
+      "sync_mode": "full_refresh"
+    },
+    {
+      "cursor_field": null,
+      "destination_sync_mode": "append",
+      "primary_key": null,
+      "stream": {
+        "default_cursor_field": null,
+        "json_schema": {},
+        "name": "roles",
+        "namespace": null,
+        "source_defined_cursor": null,
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ],
+        "supported_sync_modes": [
+          "full_refresh"
+        ]
+      },
+      "sync_mode": "full_refresh"
+    },
+    {
+      "cursor_field": null,
+      "destination_sync_mode": "append",
+      "primary_key": null,
+      "stream": {
+        "default_cursor_field": null,
+        "json_schema": {},
+        "name": "milestones",
+        "namespace": null,
+        "source_defined_cursor": null,
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ],
+        "supported_sync_modes": [
+          "full_refresh"
+        ]
+      },
+      "sync_mode": "full_refresh"
+    },
+    {
+      "cursor_field": null,
+      "destination_sync_mode": "append",
+      "primary_key": null,
+      "stream": {
+        "default_cursor_field": null,
+        "json_schema": {},
+        "name": "people",
+        "namespace": null,
+        "source_defined_cursor": null,
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ],
+        "supported_sync_modes": [
+          "full_refresh"
+        ]
+      },
+      "sync_mode": "full_refresh"
     }
   ]
 }
