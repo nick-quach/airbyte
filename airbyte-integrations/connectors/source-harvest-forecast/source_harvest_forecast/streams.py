@@ -7,6 +7,7 @@ from typing import Any, Iterable, Mapping, MutableMapping, Optional
 
 import pendulum
 import requests
+import datetime
 from airbyte_cdk.models import SyncMode
 from airbyte_cdk.sources.streams.http import HttpStream
 
@@ -87,5 +88,43 @@ class Milestones(HarvestForecastStream):
 class People(HarvestForecastStream):
     """
     Path: "https://api.forecastapp.com/people"
+    Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
+    """
+
+class HarvestForecastDateRangeStream(HarvestForecastStream):
+
+    date_param_template = "%Y%m%d"
+
+    def request_params(self, stream_state: Mapping[str, Any], stream_slice: Mapping[str, Any] = None, **kwargs) -> MutableMapping[str, Any]:
+        params = super().request_params(stream_state, **kwargs)
+        params = {**params, **stream_slice} if stream_slice else params
+        return params
+
+    def stream_slices(self, sync_mode, stream_state: Mapping[str, Any] = None, **kwargs) -> Iterable[Optional[MutableMapping[str, any]]]:
+        """
+        Override default stream_slices CDK method to provide date_slices as page chunks for data fetch.
+        """
+        slices = []
+
+        # Create first slice from 180days ago to today
+        start_date = pendulum.now().date().subtract(days=180)
+        end_date = pendulum.now().date()
+        slices.append({"start_date": start_date.strftime(self.date_param_template), "end_date": end_date.strftime(self.date_param_template)})
+
+        # Create second slice for today to 180days out
+        start_date = pendulum.now().date()
+        end_date = pendulum.now().date().add(days=180)
+        slices.append({"start_date": start_date.strftime(self.date_param_template), "end_date": end_date.strftime(self.date_param_template)})
+
+        # Create second slice for today to 180days out
+        start_date = pendulum.now().date().add(days=180)
+        end_date = pendulum.now().date().add(days=360)
+        slices.append({"start_date": start_date.strftime(self.date_param_template), "end_date": end_date.strftime(self.date_param_template)})
+
+        return slices
+
+class Assignments(HarvestForecastDateRangeStream):
+    """
+    Path: "https://api.forecastapp.com/assignments"
     Docs: "This API is still in BETA and where is no official docs (https://help.getharvest.com/forecast/faqs/faq-list/api/)
     """
